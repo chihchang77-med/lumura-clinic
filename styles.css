@@ -968,3 +968,29 @@ iframe {
     object-position: center top;
   }
 }
+/* Doctor profile cards: show full resume images without cropping */
+.doctor-card {
+  grid-template-rows: auto auto !important;
+  overflow: visible !important;
+}
+
+.doctor-card img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+  background: #f4f1e9 !important;
+}
+
+@media (max-width: 760px) {
+  .doctor-card img {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+  }
+}
