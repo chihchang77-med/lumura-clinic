@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chihchang77-med.github.io/lumura-clinic/sitemap.xml
