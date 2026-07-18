@@ -41,36 +41,61 @@
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">台中豐原中醫診所</p>
-          <h1>豐原南陽路，良沐中醫診所</h1>
-          <div class="district-list" aria-label="服務院區">
-            <span>減重體質調理</span>
-            <span>婦科／備孕產後</span>
-            <span>兒童轉骨與過敏調理</span>
-          </div>
-        </div>
-
-        <div class="hero-stage">
-          <div class="hero-panel">
-            <p>
-              以中醫體質辨證為基礎，結合健康減重、埋線體雕與醫師追蹤陪伴，讓身體回到更輕盈、穩定、可持續的狀態。
-            </p>
-            <a class="section-link" href="#weight">服務項目</a>
-            <div class="line-card">
-              <span class="line-badge">LINE</span>
-              <p>良沐中醫 ID：@040pfdwb</p>
-              <strong>歡迎加入官方 LINE，線上預約</strong>
-              <a href="https://lin.ee/zBTqby3" target="_blank" rel="noreferrer">前往 LINE 預約</a>
+        <div class="hero-slider" data-hero-slider aria-label="良沐中醫主視覺輪播">
+          <article class="hero-slide is-active">
+            <img src="./assets/clinic-space.jpg" alt="良沐中醫診所明亮溫暖的候診空間" />
+            <div class="hero-copy">
+              <img class="hero-logo" src="./assets/lumura-logo-lockup.png" alt="良沐中醫診所" />
+              <p class="eyebrow">Taichung Fengyuan Chinese Medicine Clinic</p>
+              <h1>在良沐，遇見更好的自己</h1>
+              <p class="hero-lead">
+                以中醫體質辨證為基礎，陪伴減重調理、婦科產後與兒童成長，讓每一次照護都更溫柔、更清楚。
+              </p>
+              <div class="district-list" aria-label="主要服務">
+                <span>減重體質調理</span>
+                <span>婦科／備孕產後</span>
+                <span>兒童轉骨與過敏調理</span>
+              </div>
+              <div class="hero-actions">
+                <a class="button primary" href="https://gptcm.tw/GPNET/MainGo?CID=LMTCM" target="_blank" rel="noreferrer">線上預約</a>
+                <a class="button secondary" href="#weight">主治項目</a>
+              </div>
             </div>
-          </div>
-
-          <div class="hero-visual" aria-label="良沐中醫診所空間形象">
-            <img src="./assets/clinic-space.jpg" alt="良沐中醫診所明亮溫暖的空間" />
-            <a class="next-card" href="#clinic">
-              <span>Next</span>
-              <strong>一個人無助，一群人相助</strong>
-            </a>
+          </article>
+          <article class="hero-slide">
+            <img src="./assets/doctor-huang-team.jpg" alt="黃韋勝醫師團隊形象" />
+            <div class="hero-copy">
+              <p class="eyebrow">Weight Management</p>
+              <h1>減重不是挨餓，是重新理解身體</h1>
+              <p class="hero-lead">
+                從體質、代謝、水腫與生活節奏切入，搭配中藥調理與埋線體雕，讓調理更穩定。
+              </p>
+              <div class="hero-actions">
+                <a class="button primary" href="./fengyuan-weight-loss.html">閱讀減重須知</a>
+                <a class="button secondary" href="https://gptcm.tw/GPNET/MainGo?CID=LMTCM" target="_blank" rel="noreferrer">線上預約</a>
+              </div>
+            </div>
+          </article>
+          <article class="hero-slide">
+            <img src="./assets/doctor-lai-team.jpg" alt="賴韋廷醫師團隊形象" />
+            <div class="hero-copy">
+              <p class="eyebrow">Women & Family Care</p>
+              <h1>女性、產後、兒童，一起被好好照顧</h1>
+              <p class="hero-lead">
+                用溫和且有脈絡的中醫照護，陪伴家庭在不同階段建立更穩定的健康節奏。
+              </p>
+              <div class="hero-actions">
+                <a class="button primary" href="#doctors">認識醫師團隊</a>
+                <a class="button secondary" href="#schedule">查看門診時間</a>
+              </div>
+            </div>
+          </article>
+          <button class="hero-arrow prev" type="button" data-hero-prev aria-label="上一張">‹</button>
+          <button class="hero-arrow next" type="button" data-hero-next aria-label="下一張">›</button>
+          <div class="hero-dots" aria-label="輪播切換">
+            <button class="is-active" type="button" data-hero-dot="0" aria-label="第 1 張"></button>
+            <button type="button" data-hero-dot="1" aria-label="第 2 張"></button>
+            <button type="button" data-hero-dot="2" aria-label="第 3 張"></button>
           </div>
         </div>
       </section>
