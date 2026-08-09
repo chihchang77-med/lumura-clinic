@@ -930,39 +930,160 @@ h3 {
 
 .doctor-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: clamp(34px, 5vw, 58px);
 }
 
 .doctor-card {
+  position: relative;
   display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--white);
-  box-shadow: 0 14px 34px rgba(65, 62, 45, 0.08);
+  grid-template-columns: minmax(260px, 0.86fr) minmax(420px, 1.14fr);
+  align-items: end;
+  gap: clamp(20px, 3.4vw, 48px);
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.doctor-card img {
+.doctor-photo {
+  position: relative;
+  align-self: stretch;
+  min-height: 460px;
+}
+
+.doctor-photo::before {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 72%;
+  height: 70%;
+  border-top: 16px solid var(--teal-dark);
+  border-left: 16px solid var(--teal-dark);
+  content: "";
+}
+
+.doctor-photo img {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  height: auto;
-  min-height: 0;
-  object-fit: contain;
+  height: 100%;
+  min-height: 460px;
+  object-fit: cover;
   object-position: center top;
-  background: #f4f1e9;
+  background: #f2f4ef;
 }
 
 .doctor-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 30px;
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: 390px;
+  padding: clamp(30px, 5vw, 58px);
+  background: #eef1ed;
 }
 
-.doctor-content p:last-child {
-  color: var(--muted);
+.doctor-content::after {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  color: rgba(111, 124, 102, 0.1);
+  font-size: clamp(64px, 10vw, 128px);
+  font-weight: 900;
+  line-height: 1;
+  content: "良沐";
+}
+
+.doctor-title-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.doctor-title-row h3 {
+  margin: 0;
+  color: var(--teal-dark);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 900;
+}
+
+.doctor-title-row span,
+.doctor-role {
+  color: var(--teal-dark);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.doctor-role {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 8px;
+}
+
+.doctor-content h4 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 18px;
+  color: var(--teal-dark);
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+.doctor-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.doctor-tags span {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  border-radius: 4px;
+  padding: 7px 16px;
+  color: var(--teal-dark);
+  font-size: 20px;
+  font-weight: 900;
+  background: var(--white);
+  box-shadow: 0 4px 14px rgba(77, 88, 68, 0.08);
+}
+
+.doctor-actions {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 240px));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.doctor-actions a {
+  display: inline-flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  padding: 12px 22px;
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 900;
+  background: var(--teal-dark);
+}
+
+.doctor-actions a:first-child {
+  color: var(--teal-dark);
+  border: 1px solid rgba(86, 98, 79, 0.28);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .schedule-wrap {
@@ -971,6 +1092,29 @@ h3 {
   border-radius: 8px;
   background: var(--white);
   box-shadow: var(--shadow);
+}
+
+.schedule-image-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.schedule-image-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+.schedule-image-wrap figcaption {
+  padding: 14px 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .schedule-table {
@@ -1179,6 +1323,29 @@ address a,
   margin-top: 22px;
 }
 
+.contact-photo {
+  margin: 28px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 14px 34px rgba(65, 62, 45, 0.08);
+}
+
+.contact-photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.contact-photo figcaption {
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 iframe {
   width: 100%;
   min-height: 420px;
@@ -1316,8 +1483,7 @@ iframe {
   }
 
   .doctor-card {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: minmax(240px, 0.9fr) minmax(360px, 1.1fr);
   }
 }
 
@@ -1405,11 +1571,67 @@ iframe {
     grid-template-columns: 1fr;
   }
 
-  .doctor-card img {
+  .doctor-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .doctor-photo {
+    min-height: 0;
+  }
+
+  .doctor-photo::before {
+    top: -12px;
+    left: -12px;
+    border-top-width: 10px;
+    border-left-width: 10px;
+  }
+
+  .doctor-photo img {
     height: auto;
     min-height: 0;
-    object-fit: contain;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     object-position: center top;
+  }
+
+  .doctor-content {
+    min-height: 0;
+    padding: 28px 20px 30px;
+  }
+
+  .doctor-title-row {
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+
+  .doctor-title-row h3 {
+    font-size: 30px;
+  }
+
+  .doctor-title-row span,
+  .doctor-role {
+    font-size: 16px;
+  }
+
+  .doctor-content h4 {
+    font-size: 23px;
+  }
+
+  .doctor-tags span {
+    min-height: 38px;
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+
+  .doctor-actions {
+    grid-template-columns: 1fr;
+    margin-top: 26px;
+  }
+
+  .doctor-actions a {
+    min-height: 54px;
+    font-size: 18px;
   }
 
   .mobile-line {
